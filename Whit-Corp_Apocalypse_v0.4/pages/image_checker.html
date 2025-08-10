@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhitCorp Apocalypse</title>
+    <link rel="stylesheet" href="../scripts/styles.css">
+    <link rel='icon' href="../images/whit-corp_logo_sq.png">
+    <script src="../scripts/job_tracker.js"></script>
+    <script src="../scripts/image_batch.py"></script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="../Whit-Corp_Apocalypse.html">
+            <img src="../images/extra_graphics/dee_dee/dee_dee_standing.svg" height="60"/>Home</a></li>
+        <li><a href="job_tracker.html">
+            <img src="../images/extra_graphics/dee_dee/dee_dee_running.svg" height="60"/>Job Tracker</a></li>
+        <li><a class="active" href="image_checker.html">
+            <img src="../images/extra_graphics/dee_dee/dee_dee_badass_goth.svg" height="60"/>Image Verification</a></li>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <li><a href="mad_scientist.html">
+            <img src="../images/extra_graphics/dee_dee/lab_dee_dee_goth.svg" height="60"/>Mad Scientist'ing!</a></li>
+    </ul>
+
+    <div class="container">
+        <h1>Whit-Corp's Apocalypse</h1>
+        <a><img src="../images/whit-corp_logo.svg" width="120" alt="Whit-Corp Logo"></a>
+    </div>
+
+    <h3 align="center">Image Checker</h3>
+
+    <div id="imageContainer" style="position: absolute; left: 35%; top: 30%; padding: 4px; display: flex; flex-direction: row; align-items: center;">
+        <a target="_blank" href="../temp/bunny.png">
+            <img class="activeQC" src="../temp/bunny.png" alt="Bunny" style="width:150px; border: 3px solid red;"></a>
+        <a target="_blank" href="../temp/cat.png">
+            <img src="../temp/cat.png" alt="Cat" style="width:75px; opacity: 0.5;"></a>
+        <a target="_blank" href="../temp/cow.png">
+            <img src="../temp/cow.png" alt="Cow" style="width:75px; opacity: 0.5;"></a>
+        <a target="_blank" href="../temp/chick.png">
+            <img src="../temp/chick.png" alt="Chick" style="width:75px; opacity: 0.5;"></a>
+        <a target="_blank" href="../temp/unicorn.png">
+            <img src="../temp/unicorn.png" alt="Unicorn" style="width:75px; opacity: 0.5;"></a>
+        <a target="_blank" href="../temp/kowala.png">
+            <img src="../temp/kowala.png" alt="Kowala" style="width:75px; opacity: 0.5;"></a>
+    </div>
+
+    <div class="check-button-container">
+        <button onclick="rateImage('chosen_ones')" class="check-button"><img src="../images/icons/as_above.svg" height="80"/></button>
+        <button onclick="rateImage('heisenberg')" class="check-button"><img src="../images/icons/so_below.svg" height="80"/></button>
+    </div>
+
+    <div id="counterContainer" style="position: absolute; left: 35%; top: 75%; font-size: 20px;">
+        <p>Chosen Ones: <span id="chosenCounter">0</span></p>
+        <p>Heisenbergs: <span id="heisenbergCounter">0</span></p>
+    </div>
+
+    <script>
+        let chosenCount = 0;
+        let heisenbergCount = 0;
+
+        function rateImage(category) {
+            let images = document.querySelectorAll("#imageContainer img");
+            let activeQCImage = document.querySelector(".activeQC");
+
+            if (!activeQCImage) return; // Fuck off if no image is left
+
+            if (category === "chosen_ones") {
+                chosenCount++;
+                document.getElementById("chosenCounter").textContent = chosenCount;
+                console.log(`Image ${activeQCImage.alt} marked as a Chosen One!`);
+            } else if (category === "heisenberg") {
+                heisenbergCount++;
+                document.getElementById("heisenbergCounter").textContent = heisenbergCount;
+                console.log(`Image ${activeQCImage.alt} has become... a Heisenberg.`);
+            }
+
+            activeQCImage.parentElement.remove(); // Dominate the image from the DOM
+
+            images = document.querySelectorAll("#imageContainer img"); // Get remaining images
+
+            if (images.length > 0) {
+                let nextImage = images[0]; // Set the first remaining image as activeQC
+                nextImage.classList.add("activeQC");
+                nextImage.style.width = "150px";
+                nextImage.style.border = "3px solid red";
+                nextImage.style.opacity = "1";
+            } else {
+                console.log("No more images to review!");
+            }
+        }
+    </script>
+
+</body>
+</html>

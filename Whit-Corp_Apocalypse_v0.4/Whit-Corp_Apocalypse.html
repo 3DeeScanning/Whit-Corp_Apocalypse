@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WhitCorp Apocalypse</title>
+	<link rel="stylesheet" href="scripts/styles.css">
+	<link rel='icon' href="images/whit-corp_logo_sq.png">
+	<script src="scripts/job_tracker.js"></script>
+</head>
+
+
+<body>
+	<ul>
+	  <li><a class="active" href="Whit-Corp_Apocalypse.html">
+		  <img src="images/extra_graphics/dee_dee/dee_dee_standing.svg" height="60"/>Home</a></li>
+	  <li><a href="pages/job_tracker.html">
+		  <img src="images/extra_graphics/dee_dee/dee_dee_running.svg" height="60"/>Job Tracker</a></li>
+	  <li><a href="pages/image_checker.html">
+		  <img src="images/extra_graphics/dee_dee/dee_dee_badass_goth.svg" height="60"/>Image Verification</a></li>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	  <li><a href="pages/mad_scientist.html">
+		  <img src="images/extra_graphics/dee_dee/lab_dee_dee_goth.svg" height="60"/>Mad Scientist'ing!</a></li>
+	</ul>
+
+	<div class="container">
+		<h1>Whit-Corp's Apocalypse</h1>
+		<a><img src="images/whit-corp_logo.svg" width="120" alt="Whit-Corp Logo"></a>
+	</div>
+
+	<h3 align="center">Job tracker</h3>
+	<p style="margin-left: 25%; padding: 1px;">Examle software for the 'Guilty Spark v1' scaner.</p>
+	<p style="margin-left: 30%; padding: 1px;">Use this UI to run, operate & track jobs for Whit_Crop.</p>
+
+	<div class="button-container">
+		<button onclick="scanCounter()" class="button">Soul Capture!</button>
+	</div>
+
+	<p style="position: absolute; left: 90%; top: 85%; transform: translate(-50%, -50%);">
+		<button onclick="resetCounter()"><img src="images/icons/reset.svg" height="80"></button>
+	</p>
+
+	<div style="position: absolute; left: 50%; top: 92%; transform: translate(-50%, -50%);" id="result"></div>
+	
+</body>
+</html>

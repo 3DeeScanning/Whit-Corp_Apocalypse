@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WhitCorp Apocalypse</title>
+	<link rel="stylesheet" href="../scripts/styles.css">
+	<link rel='icon' href="../images/whit-corp_logo_sq.png">
+	<script src="../scripts/job_tracker.js"></script>
+	    <style>
+        table {
+			font-family: Sans-serif, Helvetica;
+			font-size:75%;
+            width: 70%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin-top: 5%;
+            margin-left: 27%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 2px;
+            text-align: center;
+        }
+        input[type="checkbox"] {	/* Custom checkbox styling */
+            width: 40px;
+            height: 40px;
+            accent-color: #6E7099; /* Change checkbox color */
+        }
+    </style>
+</head>
+
+
+<body>
+	<ul>
+	  <li><a href="../Whit-Corp_Apocalypse.html">
+		  <img src="../images/extra_graphics/dee_dee/dee_dee_standing.svg" height="60"/>Home</a></li>
+	  <li><a class="active" href="job_tracker.html">
+		  <img src="../images/extra_graphics/dee_dee/dee_dee_running.svg" height="60"/>Job Tracker</a></li>
+	  <li><a href="image_checker.html">
+		  <img src="../images/extra_graphics/dee_dee/dee_dee_badass_goth.svg" height="60"/>Image Verification</a></li>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	  <li><a href="mad_scientist.html">
+		  <img src="../images/extra_graphics/dee_dee/lab_dee_dee_goth.svg" height="60"/>Mad Scientist'ing!</a></li>
+	</ul>
+
+	<div class="container">
+		<h1>Whit-Corp's Apocalypse</h1>
+		<a><img src="../images/whit-corp_logo.svg" width="120" alt="Whit-Corp Logo"></a>
+	</div>
+
+	<h3 align="center">Job tracker</h3>
+	<p style="margin-left: 25%; padding: 4px;">Stay dilagent about entering taskes when completed!</p>
+
+
+
+    <table id="scanTable">
+        <thead>
+            <tr>
+                <th>Scan #</th>
+                <th>Step 1<br><br> Soul Captured?</th>
+                <th>Step 2<br><br> Crystal Ball Image Verification?</th>
+                <th>Step 3<br><br> Animating a Clay Army!</th>
+                <th>Step 4<br><br> Sewing Buttons in Their Eyes</th>
+                <th>Step 5<br><br> Send em' down river</vbr></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="result"></div>
+
+	<p style="position: absolute; left: 30%; top: 20%; transform: translate(-50%, -50%);">
+		<button onclick="scanCounter()">Soul Capture!</button>
+	</p>
+
+	<p style="position: absolute; left: 80%; top: 20%; transform: translate(-50%, -50%);">
+		<button onclick="resetCounter()"><img src="../images/icons/reset.svg" height="80"></button>
+	</p>
+
+	<div style="position: absolute; left: 45%; top: 85%; transform: translate(-50%, -50%);" id="result"></div>
+
+</body>
+</html>
